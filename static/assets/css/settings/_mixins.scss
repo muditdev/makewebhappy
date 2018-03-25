@@ -1,0 +1,27 @@
+
+
+@mixin v-center($pos: absolute) {
+  position: $pos;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin h-center($pos: absolute) {
+  position: $pos;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin both-center($pos: absolute, $top: 50%) {
+  position: $pos;
+  top: $top;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  box-shadow: $shadow;
+}

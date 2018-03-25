@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
 import Header from '../components/Header'
-import './index.css'
+import { withPrefix } from 'gatsby-link'
+
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -13,6 +13,10 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
+      link={[{
+        rel : "stylesheet",
+        href: '../assets/css/main.css'
+      }]}
     />
     <Header />
     <div

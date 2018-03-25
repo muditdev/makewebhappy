@@ -1,0 +1,141 @@
+main.projectsPg {
+  .products {
+    padding: 0 10px;
+  }
+}
+
+// Indivisual projects
+.projInner {
+  .container {
+    @include outer-container(1200px);
+  }
+  header.proj-header {
+    // this bg color will be dynamic
+    background-color: #34495e;
+    padding: 50px 0;
+    .proj-head {
+      color: $white;
+      text-align: center;
+      h1 {
+        font-size: 2.5em;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
+      a {
+        color: $white;
+        font-weight: 600;
+        letter-spacing: .5px;
+      }
+    }
+  }
+  .proj-mock {
+    background: url(/assets/svg/air_frame.svg) no-repeat center center;
+    background-size: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    @include outer-container(768px);
+    @include media($mobile) {
+      max-width: 320px;
+      min-width: 300px;
+    }
+    img {
+      width: 100%;
+      padding: 7% 13.5% 10%;
+      @include media($mobile) {
+        padding: 27px 43px 34px;
+      }
+    }
+
+    &.nobg{
+      background: none;
+      text-align: center;
+      img{
+        max-width: 100%;
+        width: auto;
+        padding: 0;
+      }
+    }
+  }
+  .proj-details {
+    @include clearfix;
+    padding: 0 15px;
+    margin-top: 60px;
+    font-weight: 400;
+    color: $gray;
+    font-size: 1.05em;
+    letter-spacing: .05em;
+    .col1 {
+      @include span-columns(8);
+      @include media($mobile) {
+        @include span-columns(12);
+      }
+    }
+    .col2 {
+      @include span-columns(4);
+      border-left: 2px solid #e7e7e7;
+      padding: 10px 0 25px 25px;
+      @include media($mobile) {
+        @include span-columns(12);
+        border: 0;
+      }
+    }
+    .proj--des {
+      h2 {
+        color: $dark-blue;
+        font-size: 1.85em;
+        small {
+          font-size: .575em;
+          font-weight: 300;
+          color: $gray;
+          font-style: italic;
+        }
+        &:after {
+          content: '';
+          display: block;
+          @include size(30px 3px);
+          background: $dark-blue;
+          margin-top: 15px;
+        }
+      }
+    }
+    h3 {
+      font-size: 1.4em;
+      color: $dark-blue;
+      margin: 20px 0 10px;
+    }
+    .proj--links {
+      margin-top: 20px;
+      .btn-3.sl {
+        width: 300px;
+        padding: 13px 0;
+      }
+      a {
+        margin-right: 15px;
+      }
+    }
+    .proj--roles,
+    .proj--tools {
+      p {
+        line-height: 1.5;
+      }
+    }
+  } // project content ----------------------------
+  .proj-content {
+    margin-top: 100px;
+    .flow-title {
+      text-align: center;
+      font-size: 4em;
+      color: rgba($gray, .125);
+    }
+    .artflow {
+      .design{
+        img{
+          width: 100%;
+          height: auto;
+        }
+
+      }
+    }
+    
+  }
+}

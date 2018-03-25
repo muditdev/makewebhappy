@@ -1,0 +1,21 @@
+.masonry {
+  column-gap: 1em;
+  &.col-4 {
+    column-count: 4;
+  }
+  &.col-3 {
+    column-count: 3;
+  }
+  @include media($mobile-l){
+    column-count: 2!important;
+  }
+  @include media($mobile) {
+    column-count: 1!important;
+  }
+
+  .item {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+  }
+}

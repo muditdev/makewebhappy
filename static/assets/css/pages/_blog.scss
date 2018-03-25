@@ -1,0 +1,121 @@
+header.blog-header{
+  text-align: center;
+  padding: 10px 15px;
+  margin-top: -100px;
+  figure.me-writer{
+    .writerBG{
+      display: block;
+      margin-bottom: -35px;
+      svg{
+        fill: rgba($color-blog, .23);
+        width: 100%;
+      }
+    }
+    img{
+      display: inline-block;
+      width: 150px;
+      height: auto;
+    }
+  }
+  .bh-content{
+    h1{
+      color: $color-blog;
+      margin-top: 25px;
+    }
+    h2{
+      margin: 10px 0;
+      color: $color-blog;
+      font-weight: 400;
+    }
+    p{
+      margin: 45px auto 0;
+      max-width: 700px;
+      font-weight: 600;
+      font-size: 1.05em;
+      letter-spacing: 1px;
+      color: $gray;
+      &:after{
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: $color-blog;
+        margin: 20px auto 0;
+      }
+    }
+  }
+}
+
+.blogPosts-container{
+  @include outer-container(970px);
+  margin-top: 35px;
+  .blogPost{
+    padding: 20px 30px;
+    // border: solid 1px;
+    border-radius: 10px;
+    margin: 50px;
+    @include box-shadow(0 0 30px 0 rgba(223, 99, 48, 0.08));
+    .post-meta{
+      margin: 15px 0;
+      font-size: 1em;
+      .date{
+        color: $gray;
+        font-size: 1em;
+      }
+      .dot{
+        display: inline-block;
+        @include size(5px);
+        background: lighten($gray, 10%);
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      .category{
+        font-weight: 700;
+        color: $color-blog;
+        letter-spacing: 1px;
+      }
+    }
+    .post-content{
+      h1.post-title{
+        color: $dark-blue;
+        margin: 7px 0;
+        text-transform: capitalize;
+        line-height: 1.25;
+      }
+      .post-excerpt{
+        font-size: 1em;
+        letter-spacing: .75px;
+        line-height: 1.5;
+        color: $gray;
+      }
+    }
+
+    .post-actions{
+      margin: 15px 0;
+      span[class^="Ico-"]{
+        @include size(30px);
+        @include transition(all .5s);
+      }
+      & > a{
+        display: inline-block;
+        &:hover{
+          span{
+            @include transform(scale(1.125));
+          }
+        }
+      }
+      .read{
+        svg{
+          fill: $color-action-read;
+        }
+      }
+      .love{
+        margin-left: 10px;
+        svg{
+          fill: $color-action-love;
+        }
+      }
+
+    }
+  }
+}
